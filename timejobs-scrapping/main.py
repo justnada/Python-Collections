@@ -4,13 +4,14 @@ import time
 
 print('Search keywords')
 keyword = input('>')
-print('Searching for {}'.format(keyword))
+print('Searching for {}...'.format(keyword))
 
 print('Put some skill that you are not familiar with')
 unfamiliar_skill = input('>')
-print(f'Filtering out {unfamiliar_skill}')
+print('Filtering out {}...'.format(unfamiliar_skill))
 
 def find_jobs():
+
     html_text = requests.get('https://www.timesjobs.com/candidate/job-search.html?searchType=personalizedSearch&from=submit&txtKeywords={}&txtLocation='.format(keyword)).text
     soup = BeautifulSoup(html_text, 'lxml')
     jobs = soup.find_all('li', class_ = 'clearfix job-bx wht-shd-bx')
