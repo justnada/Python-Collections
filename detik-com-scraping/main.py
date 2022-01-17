@@ -66,6 +66,7 @@ def generate_csv():
 
 def insert_data():
     for index, news in enumerate(news_found):
+        # print(news, links[index])
         insert_news(news, links[index])
 
 
